@@ -5,7 +5,7 @@ from langgraph.graph import StateGraph,START,END
 from typing import TypedDict,Annotated
 from langgraph.graph.message import add_messages
 from langgraph.checkpoint.memory import InMemorySaver
-from langchain_core.messages import BaseMessage,AIMessage
+from langchain_core.messages import BaseMessage,AIMessage,HumanMessage
 
 #model
 model=EuriLLM()
@@ -34,6 +34,7 @@ graph.add_edge('chat',END)
 #compile graph
 checkpointer=InMemorySaver()
 workflow=graph.compile(checkpointer=checkpointer)
+
 
 
 

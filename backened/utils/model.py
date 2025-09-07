@@ -27,7 +27,8 @@ def generate_completion(message,temperature=0.7,max_tokens=500):
 
     response = requests.post(url, headers=headers, json=payload)
     data = response.json()
-    return data['choices'][0]['message']['content']
+    return "hello i can assist you"
+    #return data['choices'][0]['message']['content']
 
         
 class EuriLLM(LLM):
